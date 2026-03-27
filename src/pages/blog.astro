@@ -6,6 +6,15 @@ import Welcome from '../components/Welcome.astro';
 <Layout>
     <h2 class="title">Blog</h2>
     <Welcome />
+    <div class="blog-posts">
+        <h1>My Astro Learning Blog</h1>
+        <p>This is where I will post about my journey learning Astro.</p>
+        <ul>
+            <li><a href="/posts/post-1/">Post 1</a></li>
+            <li><a href="/posts/post-2/">Post 2</a></li>
+            <li><a href="/posts/post-3/">Post 3</a></li>
+        </ul>
+    </div>
 </Layout>
 
 <style>
@@ -13,5 +22,42 @@ import Welcome from '../components/Welcome.astro';
         text-align: center;
         font-size: 2rem;
         margin-top: 2rem;
+    }
+    .blog-posts{
+        display: flex;
+        flex-direction: column;
+        place-content: center;
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+    .blog-posts h1 {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .blog-posts p {
+        text-align: center;
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+    .blog-posts ul {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        list-style: none;
+        padding: 0;
+    }
+    .blog-posts li {    
+        margin-bottom: 1rem;
+    }
+    .blog-posts a {
+        text-decoration: none;
+        color: #0070f3;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+    .blog-posts a:hover {
+        color: #0051a2;
     }
 </style>

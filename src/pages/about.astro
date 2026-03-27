@@ -2,11 +2,37 @@
 import Layout from '../layouts/Layout.astro';
 import Welcome from '../components/Welcome.astro';
 
+const title = 'About Us';
+
+const identity = {
+  firstName: "Sarah",
+  country: "Canada",
+  occupation: "Technical Writer",
+  hobbies: ["photography", "birdwatching", "baseball"],
+};
+
+const emperor = true
+const gender = "female"
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 ---
 
 <Layout>
-    <h2 class="title">About Us</h2>
+    <h2 class="title">{title}</h2>
 	<Welcome />
+    <p>Here are a few facts about me:</p>
+    <ul>
+        <li>My name is {identity.firstName}.</li>
+        {emperor ? <li>I am the {gender === 'female' ? 'empress' : 'emperor'} of Canada!</li> : <li>I am a slave!</li>}
+        <li>Obviously, I live in {identity.country} and also work as a {identity.occupation} as a side gig.</li>
+        {identity.hobbies.length >= 2 &&
+            <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+        }
+        </ul>
+        <p>My skills are:</p>
+        <ul>
+        {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
 </Layout>
 
 <style>
